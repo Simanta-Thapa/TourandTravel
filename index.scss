@@ -1,0 +1,520 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --title-color: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 70%);
+  --text-color-light: hsl(0, 0%, 60%);
+  --body-color: hsl(0, 0%, 0%);
+  --container-color: hsl(0, 0%, 8%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Montserrat", sans-serif;
+  --biggest-font-size: 2.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1152px) {
+  :root {
+    --biggest-font-size: 5.5rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--body-color);
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+/*=============== HEADER & NAV ===============*/
+
+.header{
+    position:fixed;
+    width: 100%;
+    background-color: transparent;
+    top:0px;
+    left:0px;
+    z-index:var(--z-fixed);
+}
+
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navToggle,.navClose{
+    display: flex;
+    font-size:1.25rem;
+    color:var(--title-color);
+    cursor: pointer;
+}
+
+/* Navigation for mobile devices */
+
+@media screen and (max-width:1023px){
+    
+    .navMenu{
+        position: fixed;
+        top:-100%;
+        left:0px;
+        background-color: grey;
+        width: 100%;
+        background-color: hsla(0,0%,0%,.3);
+        backdrop-filter: blur(24px);
+        padding:4rem;
+        transition:top .5s;
+    }
+
+    .navList{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap:2rem;
+    }
+
+    .navClose{
+        position: absolute;
+        top:1rem;
+        right:1.5rem;
+    }
+
+    .navMenu.showMenu{
+        top:0;
+    }
+}
+
+
+
+// laptop navbar
+
+@media screen and (min-width:1024px){
+
+  .navClose,
+  .navToggle{
+    display: none;
+  }
+
+  .navList{
+    display: flex;
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+
+  .navLink{
+    color:white;
+  }
+
+}
+
+/* Show menu */
+
+
+/* Add blur to header */
+#header.blurHeader::after{
+  content:'';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(0,0%,0%,.3);
+  backdrop-filter: blur(24px);
+  top:0;
+  left:0;
+  z-index: -1;
+
+}
+
+/* Active link */
+
+
+/*=============== HOME ===============*/
+
+.home{
+  position:relative;
+}
+
+.homeBg{
+  position:absolute;
+  top:0rem;
+  left:0;
+  width: 100%;
+  height: 750px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.homeShadow{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 800px;
+  background:linear-gradient(180deg,
+  hsla(0,0%,0%,0) 58%,
+  hsl(0, 0%, 0%)78%);
+}
+
+.homeContainer{
+  position: relative;
+  padding-top:3rem;
+}
+
+.homeData{
+  text-align: center;
+}
+
+
+.homeTitle{
+  font-size:var(--biggest-font-size);
+  margin-bottom: 1rem;
+}
+
+.homeCards{
+  grid-template-columns: 240px;
+  justify-content: center;
+}
+
+
+.homeCard{
+  position:relative;
+  overflow: hidden;
+}
+
+
+.homeCardImg{
+  transition: transform .4s;
+}
+
+.homeCardShadow{
+  position:absolute;
+  width: 100%;
+  height:100%;
+  top:0;
+  left:0;
+  background:linear-gradient(180deg, 
+  hsla(0,0%,0%,0) 50%,
+  hsl(0,0%,0%)125%);
+}
+
+.homeCardTitle{
+  position:absolute;
+  left:1rem;
+  bottom:1rem;
+  z-index: 1;
+}
+
+
+.homeCard:hover .homeCardImg{
+  transform: scale(1.2);
+}
+
+/*=============== BUTTON ===============*/
+
+
+
+
+/*=============== JOIN ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+.footer {
+  padding-block: 2.5rem;
+  background-color: var(--container-color);
+}
+
+.footerContent {
+  row-gap: 3.5rem;
+}
+
+.footerLogo {
+  display: inline-block;
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1.5rem;
+}
+
+.footerData {
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 3.5rem;
+}
+
+.footerTitle {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+}
+
+.footerLinks {
+  display: grid;
+  row-gap: 0.75rem;
+}
+
+.footerLink {
+  color: var(--text-color);
+  transition: color 0.4s;
+}
+
+.footerLink:hover {
+  color: var(--title-color);
+}
+
+.footerGroup,
+.footerSocial {
+  display: flex;
+}
+
+.footerGroup {
+  margin-top: 5rem;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2.5rem;
+}
+
+.footerSocial {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  font-size: 1.25rem;
+  transition: color 0.4s, transform 0.4s;
+}
+
+.footerSocialLink:hover {
+  color: var(--title-color);
+  transform: translateY(-0.25rem);
+}
+
+.footerCopy {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  text-align: center;
+}
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+/* Show Scroll Up */
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+@media screen and (max-width:340px){
+  .container{
+    margin-inline:1rem;
+  }
+
+
+  .footerData{
+    grid-template-columns: max-content;
+  }
+  
+}
+
+
+@media screen and (min-width:341px) and (max-width:575px){
+
+
+  .footerLogo{
+    width: 100%;
+    text-align: center;
+  }
+  .footerHeading a,p{
+    text-align: center;
+  }
+
+  .footerData{
+    grid-template-columns: repeat(2,max-content);
+    justify-content: center;
+  }
+}
+
+/* For medium devices */
+
+@media screen and (min-width:576px) and (max-width:767px){
+  .homeContainer{
+
+    grid-template-columns: 380px;  
+    justify-content: center;
+  
+  }
+
+
+  .footerheading{
+    text-align: center;
+  }
+  
+  .footerData{
+    grid-template-columns: repeat(2,max-content);
+    justify-content: center;
+  }
+
+}
+
+
+@media screen and (min-width:768px) and (max-width:1023px){
+  .homeCards{
+    grid-template-columns: repeat(2,240px);
+  }
+
+  .footerContent{
+    grid-template-columns: repeat(2,max-content);
+    justify-content: center;
+    gap:5rem;
+  }
+}
+
+@media screen and (min-width:1024px){
+ .homeContainer{
+  grid-template-columns: 100%;
+  justify-content: center;
+  row-gap: 4rem;
+ }
+
+ .homeShadow{
+  width: 100%;
+  height: 100%;
+ }
+
+ .homeData{
+  text-align: initial;
+  width: 480px;
+ }
+
+ .homeCards{
+  display: grid;
+
+  grid-template-columns: repeat(4,250px);
+  justify-content: center;
+  align-items: center;
+ }
+
+ .homeCardTitle{
+  left:1.5rem;
+  bottom:1.5rem;
+ }
+
+.footerContent{
+  display: flex;
+  justify-content: space-between;
+  padding:1rem 1rem;
+}
+
+.footerData{
+  display: flex;
+ 
+}
+
+.footerGroup{
+  margin-top: 2rem;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+}
+/* For large devices */
+
+
+

@@ -148,55 +148,11 @@ img {
     cursor: pointer;
 }
 
-/* Navigation for mobile devices */
-
-@media screen and (max-width:1000px){
-    
-    .navMenu{
-        position: fixed;
-        top:-100%;
-        left:0px;
-        background-color: grey;
-        width: 100%;
-        background-color: hsla(0,0%,0%,.3);
-        backdrop-filter: blur(24px);
-        padding:4rem;
-        transition:top .5s;
-    }
-
-    .navList{
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        gap:2rem;
-    }
-
-    .navClose{
-        position: absolute;
-        top:1rem;
-        right:1.5rem;
-    }
-
-    .navMenu.showMenu{
-        top:0;
-    }
-}
-
-/* Show menu */
+// popular
 
 
-/* Add blur to header */
-#header.blurHeader::after{
-  content:'';
-  position: absolute;
-  width: 1000%;
-  height: 100%;
-  background-color: hsla(0,0%,0%,.3);
-  backdrop-filter: blur(24px);
-  top:0;
-  left:0;
-  z-index: -1;
-
+.sectionTitle{
+  text-align: center;
 }
 
 
@@ -226,4 +182,223 @@ img {
    hsla(0,0%,0%,0)50%
    ,
    hsl(0,0%,0%)125%);
+}
+
+// footer 
+
+
+.footer {
+  padding-block: 2.5rem;
+  background-color: var(--container-color);
+}
+
+.footerContent {
+  row-gap: 3.5rem;
+}
+
+.footerLogo {
+  display: inline-block;
+  color: var(--title-color);
+  font-size: var(--h2-font-size);
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 1.5rem;
+}
+
+.footerData {
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 3.5rem;
+}
+
+.footerTitle {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+}
+
+.footerLinks {
+  display: grid;
+  row-gap: 0.75rem;
+}
+
+.footerLink {
+  color: var(--text-color);
+  transition: color 0.4s;
+}
+
+.footerLink:hover {
+  color: var(--title-color);
+}
+
+.footerGroup,
+.footerSocial {
+  display: flex;
+}
+
+.footerGroup {
+  margin-top: 5rem;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2.5rem;
+}
+
+.footerSocial {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  font-size: 1.25rem;
+  transition: color 0.4s, transform 0.4s;
+}
+
+.footerSocialLink:hover {
+  color: var(--title-color);
+  transform: translateY(-0.25rem);
+}
+
+.footerCopy {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  text-align: center;
+}
+
+
+@media screen and (max-width:340px){
+  
+  .footerData{
+    grid-template-columns: max-content;
+   
+  }
+}
+
+
+@media screen and (min-width:341px) and (max-width:575px){
+
+
+  .footerLogo{
+    width: 100%;
+    text-align: center;
+  }
+  .footerHeading a,p{
+    text-align: center;
+  }
+
+  .footerData{
+    grid-template-columns: repeat(2,max-content);
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width:576px) and (max-width:767px){
+  
+
+
+  .footerheading{
+    text-align: center;
+  }
+  
+    .footerData{
+      grid-template-columns: repeat(2,max-content);
+      justify-content: center;
+    }
+
+}
+
+@media  (min-width:768px) and (max-width:1024px) {
+  .footerContent{
+    padding:2rem 2rem;
+    grid-template-columns: repeat(2,max-content);
+    justify-content: space-between;
+  }
+}
+
+
+
+@media(min-width:1025px){
+
+  .navList{
+     display: flex;
+     gap:2rem;
+    }
+
+    .navClose{
+      display: none;
+    }
+
+    .navToggle{
+      display: none;
+    }
+
+
+    .popularContainer{
+      grid-template-columns: repeat(3,300px);
+      justify-content: center;
+    }
+
+  
+    }
+
+
+ .footerContent{
+  grid-template-columns: repeat(2,max-content);
+  justify-content: space-between;
+  padding:1.5rem 2rem;
+ }
+
+    .footerData{
+      grid-template-columns: repeat(4,max-content);
+      justify-content: center;
+    }
+
+
+  }
+
+
+
+// showing navbar  media queries
+
+  @media screen and (max-width:1024px){
+
+    // navbar 
+      
+    .navMenu{
+        position: fixed;
+        top:-100%;
+        left:0px;
+        background-color: grey;
+        width: 100%;
+        background-color: hsla(0,0%,0%,.3);
+        backdrop-filter: blur(24px);
+        padding:4rem;
+        transition:top .5s;
+    }
+  
+    .navList{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap:2rem;
+    }
+  
+    .navClose{
+        position: absolute;
+        top:1rem;
+        right:1.5rem;
+    }
+  
+    .navMenu.showMenu{
+        top:0;
+    }
+  }
+
+
+/* Add blur to header */
+#header.blurHeader::after{
+content:'';
+position: absolute;
+width: 1000%;
+height: 100%;
+background-color: hsla(0,0%,0%,.3);
+backdrop-filter: blur(24px);
+top:0;
+left:0;
+z-index: -1;
+
 }

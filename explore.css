@@ -383,6 +383,21 @@ img {
     grid-template-columns: max-content;
   }
 }
+@media screen and (min-width: 341px) and (max-width: 575px) {
+  .exploreImage {
+    width: 100%;
+  }
+  .joinContainer {
+    grid-template-columns: 300px;
+    justify-content: center;
+  }
+  .footerContent {
+    justify-content: center;
+  }
+  .footerUpperTitle {
+    text-align: center;
+  }
+}
 @media screen and (min-width: 576px) and (max-width: 1000px) {
   .exploreImage {
     width: 100%;
@@ -393,12 +408,13 @@ img {
     justify-content: center;
   }
   .footerContent {
-    grid-template-columns: repeat(2, max-content);
-    justify-content: space-between;
-    padding: 1.5rem 1rem;
+    justify-content: center;
+  }
+  .footerUpperTitle {
+    text-align: center;
   }
   .footerData {
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(2, max-content);
   }
 }
 @media (min-width: 1001px) {
@@ -412,8 +428,26 @@ img {
   .navToggle {
     display: none;
   }
+  .explore {
+    padding-top: 1.5rem;
+  }
   .exploreImage {
     width: 100%;
+  }
+  .exploreContent {
+    grid-template-columns: 600px 200px;
+    justify-content: space-between;
+  }
+  .sectionTitle {
+    text-align: initial;
+    margin-bottom: 1rem;
+  }
+  .exploreDescription {
+    text-align: initial;
+  }
+  .joinContainer {
+    grid-template-columns: 400px 500px;
+    justify-content: center;
   }
   .footerContent {
     grid-template-columns: repeat(2, max-content);

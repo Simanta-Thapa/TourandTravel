@@ -99,10 +99,16 @@ img {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
+
+.container{
+  width: 80%;
+  margin:0 auto;
 }
+
+// .container {
+//   max-width: 1120px;
+//   margin-inline: 1.5rem;
+// }
 
 .grid {
   display: grid;
@@ -161,6 +167,10 @@ img {
 
 }
 
+.navbarcontent{
+  display: flex;
+  justify-content: space-between;
+}
 
 
 // About section 
@@ -190,9 +200,9 @@ img {
    
 }
 
-// .aboutImage:hover{
-//     transform: scale(1.2);
-// }
+.aboutImage:hover{
+    transform: scale(1.2);
+}
 
 
 .aboutShadow{
@@ -204,6 +214,36 @@ img {
     background: linear-gradient(180deg,
     hsla(0,0%,0%,0) 50%,
     hsl(0,0%,0%)125%);
+}
+
+
+// travel with us 
+
+.travelcard{
+  width: 30%;
+}
+
+// goal section 
+
+
+
+.goalcard:first-of-type,.goalcard:last-of-type{
+  background-color: #ed1b24;
+}
+
+.goalcard:nth-of-type(2){
+  background-color: #d21a22;
+}
+
+
+// strength card 
+
+#strength{
+  background-color: #f7f7f7;
+}
+.strengthcardimg .fa-solid{
+  font-size:3rem;
+  color:red;
 }
 
 // footer 
@@ -316,6 +356,14 @@ img {
 
 @media screen and (max-width:340px){
   
+  .flex{
+    flex-direction: column;
+  }
+
+  .travelcard{
+    width: 100%;
+  }
+
   .footerData{
     grid-template-columns: max-content;
    
@@ -327,7 +375,15 @@ img {
 
 @media screen and (min-width:341px) and (max-width:575px){
 
+  .flex{
+    flex-wrap: wrap;
+    
+  }
 
+  .travelcard{
+    width: 35%;
+  
+  }
   .footerLogo{
     width: 100%;
     text-align: center;
@@ -345,6 +401,25 @@ img {
 
 @media screen and (min-width:576px) and (max-width:767px){
   
+#travelwithuscontent{
+  display: grid;
+  grid-template-columns: repeat(2,250px);
+  row-gap: 1rem;
+  column-gap: 1rem;
+  justify-content: center;
+}
+
+.travelcard{
+  width: 100%;
+  
+
+}
+
+.goalcontent{
+  display: grid;
+  grid-template-columns: repeat(2,250px);
+}
+
 
 
   .footerheading{

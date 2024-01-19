@@ -97,6 +97,16 @@ img {
   gap: 1.5rem;
 }
 
+.flex {
+  display: flex;
+  gap: 2rem;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .section {
   padding-block: 5rem 1rem;
 }
@@ -162,6 +172,44 @@ img {
   width: 100%;
   height: 100%;
   background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%) 125%);
+}
+
+.tourcommonheading {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.tourcommonheading p {
+  font-size: 1.5rem;
+}
+
+.tourcardmiddletext {
+  margin-top: 1rem;
+}
+
+.tourcardmiddletext p {
+  margin-top: 0.3rem;
+}
+
+.tourcardlowertext {
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.europecontent {
+  justify-content: space-between;
+}
+
+.europecard {
+  width: 30%;
+}
+
+.europecardimage {
+  height: 229px;
+}
+.europecardimage img {
+  width: 100%;
+  height: 100%;
 }
 
 .footer {

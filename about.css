@@ -196,6 +196,10 @@ img {
   width: 30%;
 }
 
+.goalcard {
+  width: 50%;
+}
+
 .goalcard:first-of-type, .goalcard:last-of-type {
   background-color: #ed1b24;
 }

@@ -100,13 +100,19 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
+ width: 80%;
+ margin:0 auto;
+
 }
 
 .grid {
   display: grid;
   gap: 1.5rem;
+}
+
+.flex{
+  display:flex;
+  gap:1.5rem;
 }
 
 .section {
@@ -272,6 +278,61 @@ transform: scale(1.2);
 }
 
 
+.testimonialsheading{
+  text-align: center;
+}
+
+
+.testimonialsheading{
+    h3{
+         font-size:1.5rem;
+         font-weight: bold;
+         margin-bottom: 1.5rem;
+    }
+
+    p{
+    margin-bottom: 1rem;
+    }
+}
+
+.testimonialcards{
+  border:2px solid white;
+  padding:1rem;
+  background-color: #faf8f2;
+  width: 60%;
+}
+
+.testimonialimage{
+  align-items: center;
+  margin-bottom: 1.5rem;
+  img{
+    border-radius: 50%;
+  }
+}
+
+.testimonialtitle{
+  margin-bottom: 1.5rem;
+  p{
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+
+.featuredpackageheading{
+  text-align: center;
+  margin-bottom: 1.5rem;
+  h2{
+    margin-bottom: 1.5rem;
+  }
+  p{
+    font-size:1.5rem;
+  }
+}
+
+.featurepackagecontent{
+  text-align: center;
+}
 // footer section 
 
 .footer{

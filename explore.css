@@ -438,8 +438,19 @@ img {
   .footerData {
     grid-template-columns: max-content;
   }
+  .testimonialcontent {
+    flex-direction: column;
+  }
 }
 @media screen and (min-width: 341px) and (max-width: 575px) {
+  .testimonialimage {
+    flex-direction: column;
+  }
+  .testimonialcontent {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .exploreImage {
     width: 100%;
   }
@@ -455,6 +466,9 @@ img {
   }
 }
 @media screen and (min-width: 576px) and (max-width: 1000px) {
+  .testimonialimage {
+    flex-direction: column;
+  }
   .exploreImage {
     width: 100%;
   }

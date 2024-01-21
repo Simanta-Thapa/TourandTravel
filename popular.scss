@@ -243,6 +243,10 @@ img {
   }
 }
 
+.tourcardmiddletext{
+  color:white;
+  
+}
 
 
 // footer 
@@ -338,6 +342,17 @@ img {
 
 @media screen and (min-width:341px) and (max-width:575px){
 
+  .asiatourcontent{
+    flex-direction: column;
+  }
+
+  .europecontent{
+    flex-direction: column;
+  }
+
+  .europecard{
+    width:100%;
+  }
 
   .footerLogo{
     width: 100%;
@@ -355,6 +370,17 @@ img {
 
 @media screen and (min-width:576px) and (max-width:767px){
   
+  .asiatourcontent{
+    flex-direction: column;
+  }
+
+  .europecontent{
+    flex-direction: column;
+  }
+
+  .europecard{
+    width:100%;
+  }
 
 
   .footerheading{
